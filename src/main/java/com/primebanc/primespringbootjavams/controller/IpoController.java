@@ -32,4 +32,9 @@ public class IpoController {
     public List<IpoInformation> fetchIposByUserName(@PathVariable String userName){
         return ipoService.fetchIpoInitiatedByUser(userName);
     }
+
+    @RequestMapping(value = "/open",method = RequestMethod.GET)
+    public List<IpoInformation> fetchOpenIpoDetails(){
+        return ipoService.fetchAllOpenIpos();
+    }
 }

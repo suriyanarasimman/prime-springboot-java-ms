@@ -6,8 +6,11 @@ import com.primebanc.primespringbootjavams.repository.IpoRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class IpoService {
@@ -32,5 +35,16 @@ public class IpoService {
 
     public List<IpoInformation> fetchIpoInitiatedByUser(String userName){
         return ipoRepo.findIpoInformationByUserName(userName);
+    }
+
+    public List<IpoInformation> fetchAllOpenIpos(){
+        List<IpoInformation> allIpoList = ipoRepo.findAll();
+        List<IpoInformation> openIpoList = new ArrayList<>();
+        for (IpoInformation ipo : allIpoList) {
+            if (ChronoUnit.DAYS.between(LocalDate.now(), ipo.getClosingDate()) >= 0) {
+                openIpoList.add(ipo);
+            }
+        }
+        return openIpoList;
     }
 }
