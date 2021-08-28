@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -44,7 +45,7 @@ public class ProductController {
     }
 
     private List<FinancialProduct> productList() {
-        List<FinancialProduct> financialProductsList = null;
+        List<FinancialProduct> financialProductsList = new ArrayList<>();
         financialProductsList.add(new FinancialProduct("Short term gold","WM001","FP","WEALTH",3000,4000,"Pay 3000 over 12 months,  after which you will get 4000. You can choose to pay monthly or quarterly"));
         financialProductsList.add(new FinancialProduct("Long term platinum","WM002","FP","WEALTH",4000,6000,"Pay 4000 over 24 months and get 6000 at the end of 24th month, this is a tax saving plan."));
         financialProductsList.add(new FinancialProduct("Income Plus","I001","FP","INCOME",7000,10000,"Income gain after 2 years, payout ($ 10000) is done in installments over 6 months"));
