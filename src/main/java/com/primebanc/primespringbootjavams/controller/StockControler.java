@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 public class StockControler {
 
     private String base = "https://data.nasdaq.com/api/v3/datatables/WIKI/PRICES?" ;
-    private String api123 = "&api_key=YOURAPIKEY" ;
+    private String api123 = "&api_key=HVzBpk-hcybrydMKFxMS" ;
 
     @Autowired
     private RestTemplate rt;
