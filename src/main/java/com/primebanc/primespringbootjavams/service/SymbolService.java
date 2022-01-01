@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 
 @Service
 public class SymbolService {
@@ -31,6 +32,11 @@ public class SymbolService {
         }catch (IOException e){
             e.printStackTrace();
         }
+    }
+
+    public List<Symbols> getFullName(String str){
+        List<Symbols> tes = sr.findByFullnamesContains(str);
+        return tes;
     }
 
 }

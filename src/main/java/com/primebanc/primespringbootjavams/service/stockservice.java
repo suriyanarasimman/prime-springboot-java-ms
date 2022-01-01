@@ -22,7 +22,6 @@ public class stockservice {
                 .forEach((st) -> {
                         setStocks(st);
                 });
-         System.out.println(s);
         return s;
     }
 
