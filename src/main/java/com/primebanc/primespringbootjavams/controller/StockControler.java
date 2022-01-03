@@ -15,6 +15,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/v1/sh/")
 public class StockControler {
 
