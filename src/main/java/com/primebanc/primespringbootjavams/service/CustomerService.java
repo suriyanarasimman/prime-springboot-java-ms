@@ -35,6 +35,10 @@ public class CustomerService {
         return regRes;
     }
 
+    public boolean checkMail(String mail){
+        return customerRepo.existsCustomerByEmail(mail);
+    }
+
     public AuthenticatedUser authenticateUser(AuthenticationRequest req){
         Customer loggedInCustomer = customerRepo.findCustomerByUserNameAndPassword(req.getUserName(), req.getPassword());
         AuthenticatedUser loginUser = new AuthenticatedUser();
