@@ -23,7 +23,7 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
-        env: password :${{secrets.password}}
+        env: password : ${{ secrets.password }}
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
