@@ -23,7 +23,7 @@ jobs:
 
       - name: Build with Maven
         env:
-          password : ${{ secrets.password }}
+          password : ${{ secrets.PASSWORD }}
         run: mvn clean install
         
 
